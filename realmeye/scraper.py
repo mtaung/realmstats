@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup as bs
 
 def soupify_html(
     url: str, 
-    headers: str,
-) -> str:
+    headers: dict,
+) -> bs:
 
     response = requests.get(url, headers=headers)
     soup = bs(response.text, "html.parser") 
