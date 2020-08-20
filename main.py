@@ -7,5 +7,7 @@ if __name__ == "__main__":
     sample = scraper.soupify_html(url, headers)
     save = scraper.save_soup("example.html", sample)
 
-    table = sample.body.find('table', {'id': 'd'})             
+    table = scraper.get_table(sample)
     save = scraper.save_soup("table.html", table)
+
+    characters = scraper.parse_deaths_table(table)
