@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Any
 import requests
 import bs4
 from bs4 import BeautifulSoup as bs
@@ -17,7 +17,7 @@ def soupify_html(
 
 def save_soup(
     filename: str, 
-    soup: bs,
+    soup: Any,
 ) -> None:
     
     with open(filename, "w", encoding='utf-8') as file:
@@ -56,4 +56,14 @@ def parse_deaths_table(
         character = cols + items
         characters.append(character)
 
+    return characters
+
+
+def parse_offers_table(
+    table: bs4.element.Tag,
+    skip_private: bool = True,
+)-> list:
+
+    rows = table.findChildren(['tr'])
+    characters = []
     return characters
