@@ -1,4 +1,6 @@
 from realmeye import scraper
+from db import interface
+from db.tables import deaths, trades
 
 url = 'https://www.realmeye.com/recent-deaths'
 trade_url = 'https://www.realmeye.com/recent-offers'
@@ -17,3 +19,12 @@ if __name__ == "__main__":
     scraper.save_soup('offers.html', sales)
     trade_table = scraper.get_table(sales)
     scraper.save_soup('offers_table.html', trade_table)
+
+    offers = scraper.parse_offers_table(trade_table)
+
+    engine = interface.engine()
+    for character in characters:
+        interface.insert_death(character, deaths, engine)
+
+    for offer in offers:
+        interface.insert_offer(offer, trades, engine)
