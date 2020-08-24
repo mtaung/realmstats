@@ -36,8 +36,8 @@ def insert_death(
         killed_by = death[6],
     )
 
-    connection = engine.connect()
-    result = connection.execute(insertion)
+    with engine.connect() as connection:
+        result = connection.execute(insertion)
     return None
 
 
@@ -55,6 +55,6 @@ def insert_offer(
         datetime = offer[3], 
     )
 
-    connection = engine.connect()
-    result = connection.execute(insertion)
+    with engine.connect() as connection:
+        result = connection.execute(insertion)
     return None
