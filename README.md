@@ -13,4 +13,4 @@ Please generate and use your own useragents before running `main.py`. Try to use
 
 ## Disclaimer:
 
-This code was written over the course of 1-2 days as a demonstration to assist teaching of *"real world"* python to a young highschool student. Readability was prioritised first and foremost and no guarantees of security, stability, or optimality are ensured.
+This code was written over the course of a couple of days as a demonstration to assist teaching of *"real world"* python to a young highschool student. Readability was prioritised first and foremost and no guarantees of security, stability, or optimality are ensured.
