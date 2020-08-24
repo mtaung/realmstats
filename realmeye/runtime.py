@@ -50,10 +50,13 @@ def timed_miner(
 
     def while_func():
         while True:
-            func(url, headers, engine)
-            naptime = interval + random.uniform(0, 30)
-            sleep(naptime)
-            print(f'naptime: {naptime}')
-            logging.info(f'{dt.datetime.now()}: {func} ran, waiting {naptime}s.')
+            try:
+                func(url, headers, engine)
+                naptime = interval + random.uniform(0, 30)
+                logging.info(f'{dt.datetime.now()}: {func} ran, waiting {naptime}s.')
+                sleep(naptime)
+            except Exception:
+                logging.exception(f'{dt.datetime.now()}: {func} failed to run.')
+
 
     return while_func

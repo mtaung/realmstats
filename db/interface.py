@@ -1,5 +1,6 @@
 from datetime import datetime
 from sqlalchemy import create_engine, MetaData
+from sqlalchemy.pool import NullPool
 import sqlalchemy
 import os
 
@@ -7,7 +8,7 @@ def engine(
     meta: sqlalchemy.MetaData = MetaData(),
     db_path: str = 'realmstats.db',
 ) -> None:
-    engine = create_engine('sqlite:///' + db_path)
+    engine = create_engine('sqlite:///' + db_path, poolclass=NullPool)
     meta.create_all(engine)
     return engine
 
