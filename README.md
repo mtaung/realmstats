@@ -13,7 +13,7 @@ Please generate and use your own useragents before running `main.py`. Try to use
 
 ## TODO: 
 
-* The actual *stats* part of **realmstats*, once some good amount of data has been collected.
+* The actual *stats* part of *realmstats*, once some good amount of data has been collected.
 * SQL tools, including duplicate cleanup and some interfacing with common modalities like pandas or csv. 
 * More thorough logging. 
 
