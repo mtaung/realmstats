@@ -56,7 +56,7 @@ def timed_miner(
                 logging.info(f'{dt.datetime.now()}: {func} ran, waiting {naptime}s.')
                 sleep(naptime)
             except Exception:
-                logging.exception(f'{dt.datetime.now()}: {func} failed to run.')
+                logging.info(f'{dt.datetime.now()}: {func} failed to run.')
 
 
     return while_func
