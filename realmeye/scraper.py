@@ -12,7 +12,7 @@ def soupify_html(
 
     response = requests.get(url, headers=headers)
     soup = bs(response.text, "html.parser") 
-
+    
     return soup
 
 
@@ -30,8 +30,8 @@ def save_soup(
 def get_table(
     soup: bs,
 ) -> bs4.element.Tag:
-    table = soup.body.find('table', {'id': 'd'})
-
+    table = soup.body.find('table', {'id': 'e'})
+    
     return table
 
 

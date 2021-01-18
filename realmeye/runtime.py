@@ -55,8 +55,8 @@ def timed_miner(
                 naptime = interval + random.uniform(0, 30)
                 logging.info(f'{dt.datetime.now()}: {func} ran, waiting {naptime}s.')
                 sleep(naptime)
-            except Exception:
-                logging.info(f'{dt.datetime.now()}: {func} failed to run.')
+            except Exception as excep:
+                logging.info(f'{dt.datetime.now()}: {func} failed to run. {excep}')
 
 
     return while_func
